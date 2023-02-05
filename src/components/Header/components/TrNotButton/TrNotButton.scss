@@ -1,0 +1,24 @@
+.TrNotButton {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 11px 18px;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    transition: all .2s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #fff;
+        color: var(--bg);
+    }
+
+    span {
+        color: var(--aqua);
+        margin-left: 5px;
+    }
+}

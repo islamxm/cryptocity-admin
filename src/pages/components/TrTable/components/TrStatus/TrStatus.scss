@@ -1,0 +1,74 @@
+.TrStatus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &__body {
+
+    }
+
+    &__body.done {
+        color: var(--aqua);
+        font-weight: 600;
+    }
+    &__body.db {
+        display: flex;
+        height: 30px;
+
+        .TrStatus__body_cancel {
+            background: rgba(206, 44, 44, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            border-radius: 12px 0px 0px 12px;
+            color: #CE2C2C;
+            cursor: pointer;
+            transition: all .2s ease;
+
+            &:hover {
+                color: #fff;
+                background-color: #CE2C2C;
+            }
+        }
+        .TrStatus__body_accept {
+            width: 50px;
+            background: rgba(29, 202, 105, 0.3);
+            border-radius: 0px 12px 12px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color:#1DCA69;
+            cursor: pointer;
+            transition: all .2s ease;
+
+            &:hover {
+                color: #fff;
+                background-color: #1DCA69;
+            }
+        }
+    }
+
+    &__body.take {
+        width: 80px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 15px;
+        text-align: center;
+    }
+
+    &__body.send {
+        color: #fff;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 19px;
+        text-align: center;
+    }
+}

@@ -1,0 +1,43 @@
+.Input {
+    &__label {
+        color: #fff;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+
+    &__el {
+        display: block;
+        width: 100%;
+        border-radius: 10px;
+        padding: 10px 15px;
+        border: 1px solid var(--aqua);
+        color: #fff;
+        font-weight: 500;
+        background-color: unset;
+        transition: all .2s ease;
+    }
+
+    &__error {
+        margin-top: 5px;    
+        color: var(--red);
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+.Input.error {
+
+    .Input__el {
+        border-color: var(--red);
+    }
+}
+
+.Input.disabled {
+    pointer-events: none;
+    touch-action: none;
+    .Input__el {
+        pointer-events: none;
+        touch-action: none;
+        opacity: .5;
+    }
+}
