@@ -1,8 +1,11 @@
 .Input {
     &__label {
-        color: #fff;
-        font-weight: 500;
-        margin-bottom: 5px;
+        font-weight: 400;
+        // margin-bottom: 5px;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 18px;
+        line-height: 21px;
+        margin-bottom: 4px;
     }
 
     &__el {
@@ -10,11 +13,18 @@
         width: 100%;
         border-radius: 10px;
         padding: 10px 15px;
-        border: 1px solid var(--aqua);
+        border: 1px solid rgba(255, 255, 255, 0.19);
         color: #fff;
         font-weight: 500;
         background-color: unset;
         transition: all .2s ease;
+        font-size: 27px;
+        line-height: 40px;
+        border-radius: 12px;
+
+        &:focus {
+            border-color: var(--aqua);
+        }
     }
 
     &__error {

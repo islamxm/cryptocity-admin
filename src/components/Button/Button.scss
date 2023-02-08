@@ -65,7 +65,33 @@
         
     }
 }
+.Button.remove-tt {
+    text-transform: none !important;
+}
+.Button.danger {
+    border-color: red;
+    color: red;
+    
+    &:after {
+        background-color: red;
+    }
 
+    &:hover {
+        color: #fff;
+    }
+}
+
+.Button.default-fill {
+    background: linear-gradient(99.35deg, #29DDDF 4.04%, #04D4D7 4.05%, #3282C7 100%);
+    color: #fff;
+    border: none;
+    &:after {
+        background-color: #fff;
+    }
+    &:hover {
+        color: var(--light_bg);
+    }
+}
 .Button.load {
     pointer-events: none;
     touch-action: none;

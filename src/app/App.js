@@ -25,8 +25,8 @@ const App = () => {
                     ) : null
                 }
                 <Routes>
-                    <Route path='/' element={<CheckAuth><TrPage/></CheckAuth>}/>
                     <Route path='/auth' element={<CheckAuth><AuthPage/></CheckAuth>}/>
+                    <Route path='/' element={<CheckAuth><TrPage/></CheckAuth>}/>
                 </Routes>
             </Layout>
             
