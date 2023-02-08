@@ -1,5 +1,5 @@
 import './TrPage.scss';
-import TrTable from '../components/TrTable/TrTable';
+import TrTable from './components/TrTable/TrTable';
 import PageLayout from '../../components/PageLayout/PageLayout';
 import {motion} from 'framer-motion';
 import contentEnterAnimProps from '../../ex/contentEnterAnimProps';
