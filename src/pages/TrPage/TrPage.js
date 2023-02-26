@@ -17,7 +17,7 @@ const TrPage = () => {
     const getTransactions = () => {
         if(token) {
             service.getTransctions(token).then(res => {
-                setList(res)
+                setList(res?.Transactions)
             })
         }
     }
@@ -31,7 +31,9 @@ const TrPage = () => {
             <PageLayout>
                 <motion.div className='TrPage__in' {...contentEnterAnimProps}>
                     <div className="TrPage__body">
-                        <TrTable/>
+                        <TrTable
+                            list={list}
+                            />
                     </div>
                 </motion.div>
             </PageLayout>

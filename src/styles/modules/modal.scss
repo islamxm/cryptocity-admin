@@ -1,0 +1,32 @@
+.Modal   {
+   
+    &__in {
+      
+    }
+    &__title {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 175%;
+        color: rgba(255, 255, 255, 0.7);
+        letter-spacing: 0.15em;
+    }
+
+    &__title.center {
+        text-align: center;
+    }
+
+    .ant-modal-content {
+        padding: 20px;
+        background-color: var(--light_bg);
+        border-radius: 15px;
+    
+        .ant-modal-close {
+            display: none;
+        }
+
+        .ant-modal-footer {
+            display: none;
+        }
+    }
+}

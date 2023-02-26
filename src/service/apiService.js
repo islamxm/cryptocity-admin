@@ -1,8 +1,10 @@
 import endpoints from "./endpoints";
+import checAuth from "./checkAuth";
 const headers = {
     'Content-type': 'application/json',
     'Accept': 'application/json',
 }
+
 
 
 class apiService {
@@ -16,6 +18,21 @@ class apiService {
             })
 
             return await res.text();
+        } catch(err) {
+            console.log(err)
+        }
+    }
+
+    logout = async (token) => {
+        try {
+            let res = await fetch(endpoints.logout, {
+                method: 'POST',
+                body: JSON.stringify({
+                    UserToken: token
+                }),
+            }) 
+            const r = await checAuth(res);
+            return r?.text()
         } catch(err) {
             console.log(err)
         }

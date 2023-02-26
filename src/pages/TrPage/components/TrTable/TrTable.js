@@ -4,13 +4,20 @@ import {AiOutlineInfoCircle} from 'react-icons/ai';
 import TrStatus from './components/TrStatus/TrStatus';
 import { Popover  } from 'antd';
 import {Col, Row} from 'antd';
+import notify from '../../../../ex/notify';
+import { ToastContainer } from 'react-toastify';
+import { useEffect } from 'react';
+
+
 const headMock = ['ID пользователя', 'Время', 'Ожидание', 'Кошелек', 'Менеджер', 'Платеж', 'Инфо', 'Сумма', 'Статус'];
+
 
 
 const PpContent = ({date, level, sum, mpi}) => {
 
     return (
         <div className="PpContent">
+           
             <Col span={24}>
                 <Row gutter={[12,12]}>
                     <Col span={12}>
@@ -44,15 +51,24 @@ const PpContent = ({date, level, sum, mpi}) => {
 }
 
 
-const TrTable = () => {
+const TrTable = ({list}) => {
 
-    const copyValue = () => {
-        
+    const copyValue = (text) => {
+        navigator.clipboard.writeText(text).then(res => {
+            notify('Адрес скопирован')  
+        })
     }
+
+
+    useEffect(() => {
+        console.log(list)
+    }, [list])
+
 
 
     return (
         <div className="TrTable">
+            <ToastContainer/>
             <table className="TrTable__body">
                 <tr className="TrTable__body_row TrTable__body_row-headrow">
                     {
@@ -73,7 +89,7 @@ const TrTable = () => {
                     </td>
                     <td className="TrTable__body_item">
                         0х567х237923х677975049ссс456792176896780З89
-                        <button className="TrTable__body_item_copy">
+                        <button onClick={copyValue} className="TrTable__body_item_copy">
                             <MdOutlineContentCopy/>
                         </button>
                     </td>
