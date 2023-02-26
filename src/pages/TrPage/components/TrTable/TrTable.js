@@ -68,7 +68,6 @@ const TrTable = ({list}) => {
 
     return (
         <div className="TrTable">
-            <ToastContainer/>
             <table className="TrTable__body">
                 <tr className="TrTable__body_row TrTable__body_row-headrow">
                     {
@@ -89,7 +88,7 @@ const TrTable = ({list}) => {
                     </td>
                     <td className="TrTable__body_item">
                         0х567х237923х677975049ссс456792176896780З89
-                        <button onClick={copyValue} className="TrTable__body_item_copy">
+                        <button onClick={() => copyValue('0х567х237923х677975049ссс456792176896780З89')} className="TrTable__body_item_copy">
                             <MdOutlineContentCopy/>
                         </button>
                     </td>
@@ -131,7 +130,7 @@ const TrTable = ({list}) => {
                     </td>
                     <td className="TrTable__body_item">
                         0х567х237923х677975049ссс456792176896780З89
-                        <button className="TrTable__body_item_copy">
+                        <button onClick={() => copyValue('0х567х237923х677975049ссс456792176896780З89')}  className="TrTable__body_item_copy">
                             <MdOutlineContentCopy/>
                         </button>
                     </td>
@@ -173,7 +172,7 @@ const TrTable = ({list}) => {
                     </td>
                     <td className="TrTable__body_item">
                         0х567х237923х677975049ссс456792176896780З89
-                        <button className="TrTable__body_item_copy">
+                        <button onClick={() => copyValue('0х567х237923х677975049ссс456792176896780З89')}  className="TrTable__body_item_copy">
                             <MdOutlineContentCopy/>
                         </button>
                     </td>
@@ -215,7 +214,7 @@ const TrTable = ({list}) => {
                     </td>
                     <td className="TrTable__body_item">
                         0х567х237923х677975049ссс456792176896780З89
-                        <button className="TrTable__body_item_copy">
+                        <button onClick={() => copyValue('0х567х237923х677975049ссс456792176896780З89')}  className="TrTable__body_item_copy">
                             <MdOutlineContentCopy/>
                         </button>
                     </td>

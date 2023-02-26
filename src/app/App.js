@@ -7,7 +7,7 @@ import Header from '../components/Header/Header';
 //pages
 import CheckAuth from '../hoc/CheckAuth';
 import AuthPage from '../pages/authPage/AuthPage';
-
+import { ToastContainer } from 'react-toastify';
 
 const App = () => {
     const loc = useLocation();
@@ -16,6 +16,7 @@ const App = () => {
 
     return (
         <div className="App">
+            <ToastContainer/>
             <Layout>
                 {
                     loc?.pathname !== '/auth' && loc?.pathname !== '/signup' ? (

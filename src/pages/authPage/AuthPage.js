@@ -38,7 +38,8 @@ const AuthPage = () => {
         setLoad(true)
         const body = {
             mail,
-            password: pass
+            password: pass,
+            isAdmin: 1
         }
 
         service.auth(body).then(res => {
