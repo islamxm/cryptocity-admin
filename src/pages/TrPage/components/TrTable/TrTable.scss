@@ -101,6 +101,13 @@
                 justify-content: center;
                 color: var(--aqua);
             }
+
+            &_tt.disabled {
+                pointer-events: none;
+                touch-action: none;
+                opacity: .5;
+                filter: grayscale(1);
+            }
         }
     }
 }
@@ -111,10 +118,23 @@
     background: #344C76 !important;
 } 
 
+.PpContent.load {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .PpContent {
     width: 325px;
     border-radius: 8px;
     overflow: hidden;
+    min-height: 120px;
+
+    &__load {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     &__item {
         color: #fff;

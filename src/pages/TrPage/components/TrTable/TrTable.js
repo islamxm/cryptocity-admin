@@ -9,7 +9,22 @@ import { ToastContainer } from 'react-toastify';
 import { useEffect } from 'react';
 
 
-const headMock = ['ID пользователя', 'Время', 'Ожидание', 'Кошелек', 'Менеджер', 'Платеж', 'Инфо', 'Сумма', 'Статус'];
+const headMock = [
+    'Тип', 
+    'ID пользователя', 
+    'Время', 
+    'Кошелек', 
+    'email', 
+    'Платеж', 
+    'Зашли', 
+    'id транзакции', 
+    'Состояние', 
+    'Менеджер',
+    'Инфо',
+    'MPI',
+    'Ожидание',
+    'Статус' 
+];
 
 
 
@@ -60,11 +75,7 @@ const TrTable = ({list}) => {
     }
 
 
-    useEffect(() => {
-        console.log(list)
-    }, [list])
-
-
+    
 
     return (
         <div className="TrTable">
@@ -76,49 +87,75 @@ const TrTable = ({list}) => {
                         ))
                     }
                 </tr>
-                <tr className="TrTable__body_row">
-                    <td className="TrTable__body_item">
-                        0203040501
-                    </td>
-                    <td className="TrTable__body_item">
-                        03.03.2023 16:55:11
-                    </td>
-                    <td className="TrTable__body_item">
-                        01:11
-                    </td>
-                    <td className="TrTable__body_item">
-                        0х567х237923х677975049ссс456792176896780З89
-                        <button onClick={() => copyValue('0х567х237923х677975049ссс456792176896780З89')} className="TrTable__body_item_copy">
-                            <MdOutlineContentCopy/>
-                        </button>
-                    </td>
-                    <td className="TrTable__body_item">
-                        Dmitriy
-                    </td>
-                    <td className="TrTable__body_item">
-                        1111
-                    </td>
-                    <td className="TrTable__body_item">
-                        <Popover
-                            placement={'bottomLeft'}
-                            content={<PpContent date={'11.12.2022'} level={'17'} sum={'$512'} mpi={'$416'}/>}
-                            >
-                            <button className="TrTable__body_item_tt">
-                                <AiOutlineInfoCircle/>
-                            </button>
-                        </Popover>
-                    </td>
-                    <td className="TrTable__body_item">
-                        1111,0005 MPI
-                        <button className="TrTable__body_item_copy">
-                            <MdOutlineContentCopy/>
-                        </button>
-                    </td>
-                    <td className="TrTable__body_item">
-                        <TrStatus type='done'/>
-                    </td>
-                </tr>
-                <tr className="TrTable__body_row active">
+                {/* {
+                    list?.map((item, index) => (
+                        <tr className="TrTable__body_row" key={index}>
+                            <td className="TrTable__body_item">
+                                
+                            </td>
+                            <td className="TrTable__body_item">
+                                {item?.UserID}
+                            </td>
+                            <td className="TrTable__body_item">
+                                {item?.CreatedTime}
+                            </td>
+                            <td className="TrTable__body_item">
+                                {
+                                    item?.TransactionType == '3' ? (
+                                        <>
+                                            {item?.UserWallet}
+                                            <button onClick={() => copyValue(item?.UserWallet)} className="TrTable__body_item_copy">
+                                                <MdOutlineContentCopy/>
+                                            </button>
+                                        </>
+                                    ) : 'N/D'
+                                }
+                            </td>
+                            <td className="TrTable__body_item">
+                                {item?.Email ? item?.Email : 'N/D'}
+                            </td>
+                            <td className="TrTable__body_item">
+                                {item?.CurrencyAmount}$
+                            </td>
+                            <td className="TrTable__body_item">
+                                {item?.ReceivedAmount}$
+                            </td>
+                            <td className="TrTable__body_item">
+                                {item?.ID}
+                            </td>
+                            <td className="TrTable__body_item">
+                                Состояние
+                            </td>
+                            <td className="TrTable__body_item">
+                                {item?.ManagerUserName ? item?.ManagerUserName : 'N/D'}
+                            </td>
+                            
+                            <td className="TrTable__body_item">
+                                <Popover
+                                    placement={'bottomLeft'}
+                                    content={<PpContent date={'11.12.2022'} level={'17'} sum={'$512'} mpi={'$416'}/>}
+                                    >
+                                    <button 
+                                        onClick={() => {}}
+                                        className="TrTable__body_item_tt">
+                                        <AiOutlineInfoCircle/>
+                                    </button>
+                                </Popover>
+                            </td>
+                            <td className="TrTable__body_item">
+                                1111,0005 MPI
+                                <button className="TrTable__body_item_copy">
+                                    <MdOutlineContentCopy/>
+                                </button>
+                            </td>
+                            <td className="TrTable__body_item">
+                                <TrStatus type='done'/>
+                            </td>
+                        </tr>
+                    ))
+                } */}
+                
+                {/* <tr className="TrTable__body_row active">
                     <td className="TrTable__body_item">
                         0203040501
                     </td>
@@ -243,7 +280,7 @@ const TrTable = ({list}) => {
                     <td className="TrTable__body_item">
                         <TrStatus type='take'/>
                     </td>
-                </tr>
+                </tr> */}
             </table>
         </div>
     )

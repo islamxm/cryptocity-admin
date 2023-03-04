@@ -51,6 +51,7 @@ const Header = () => {
                         <img src={logo} alt="Crypto-City" />
                     </a>
                     <div className="Header__main">
+                        
                         <div className="Header__main_item">
                             <TrNotButton value={'+15'}/>
                         </div>  

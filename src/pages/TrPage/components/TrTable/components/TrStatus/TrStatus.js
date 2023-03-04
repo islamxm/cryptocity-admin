@@ -2,17 +2,25 @@ import './TrStatus.scss';
 import {MdClose} from 'react-icons/md';
 import {BsCheck2} from 'react-icons/bs';
 
+
 const statuses = {
     done: 'done',
     db: 'db',
     take: 'take',
     send: 'send',
-    none: 'none'
+    accept: 'accept',
+    cancel: 'cancel',
+    none: 'none',
+    wait: 'wait',
+    decline: 'decline'
 }
 
 
 const TrStatus = ({
-    type = statuses.none
+    type = statuses.none,
+    acceptTrans,
+    takeTrans,
+    rejectTrans
 }) => {
 
 
@@ -27,13 +35,25 @@ const TrStatus = ({
             case statuses.db:
                 return (
                     <div className="TrStatus__body db">
-                        <div className="TrStatus__body_cancel"><MdClose/></div>
-                        <div className="TrStatus__body_accept"><BsCheck2/></div>
+                        <div 
+                            onClick={rejectTrans}
+                            className="TrStatus__body_cancel"><MdClose/></div>
+                        <div 
+                            onClick={acceptTrans}
+                            className="TrStatus__body_accept"><BsCheck2/></div>
+                    </div>
+                )
+            case statuses.decline:
+                return (
+                    <div className="TrStatus__body send" style={{color: 'red'}}>
+                        Отклонен
                     </div>
                 )
             case statuses.take:
                 return (
-                    <div className="TrStatus__body take">
+                    <div 
+                        onClick={takeTrans}
+                        className="TrStatus__body take">
                         Взять
                     </div>
                 )
@@ -43,8 +63,28 @@ const TrStatus = ({
                         Отправил
                     </div>
                 )
+            case statuses.wait:
+                return (
+                    <div className="TrStatus__body send">
+                        Ожидает платежа
+                    </div>
+                )
+            case statuses.accept:
+                return (
+                    <div className="TrStatus__body db">
+                        {/* <div className="TrStatus__body_cancel"><MdClose/></div> */}
+                        <div className="TrStatus__body_accept"><BsCheck2/></div>
+                    </div>
+                )
+            case statuses.cancel:
+                return (
+                    <div className="TrStatus__body db">
+                        <div className="TrStatus__body_cancel"><MdClose/></div>
+                        {/* <div className="TrStatus__body_accept"><BsCheck2/></div> */}
+                    </div>
+                )
             default:
-                return null;
+                return 'N/D';
         }
     }
 
