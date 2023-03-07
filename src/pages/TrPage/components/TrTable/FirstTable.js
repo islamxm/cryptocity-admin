@@ -248,17 +248,21 @@ const FirstTable = ({list, MyManagerID, load, updateList}) => {
                             </td>
 
                             {/* Кошелек */}
-                            <td className="TrTable__body_item">
-                                {switchWallet(item?.TransactionType, item?.TransactionWallet, item?.UserWallet)}
-                                {
-                                    switchWallet(item?.TransactionType, item?.TransactionWallet, item?.UserWallet) == 'N/D' ? (
-                                        null 
-                                    ) : (
-                                        <button onClick={() => copyValue(switchWallet(item?.TransactionType, item?.TransactionWallet, item?.UserWallet))} className="TrTable__body_item_copy">
-                                            <MdOutlineContentCopy/>
-                                        </button>
-                                    )
-                                }
+                            <td className="TrTable__body_item wallet">
+                                <div className="wallet-in">
+                                    <div className='wallet-text'>{switchWallet(item?.TransactionType, item?.TransactionWallet, item?.UserWallet)}</div>
+                                    
+                                    {
+                                        switchWallet(item?.TransactionType, item?.TransactionWallet, item?.UserWallet) == 'N/D' ? (
+                                            null 
+                                        ) : (
+                                            <button onClick={() => copyValue(switchWallet(item?.TransactionType, item?.TransactionWallet, item?.UserWallet))} className="TrTable__body_item_copy">
+                                                <MdOutlineContentCopy/>
+                                            </button>
+                                        )
+                                    }
+                                </div>
+                                
                                 
                             </td>
 

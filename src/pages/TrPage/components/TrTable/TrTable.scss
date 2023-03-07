@@ -77,6 +77,22 @@
             padding: 11px 15px;
         }
 
+        &_item.wallet {
+
+            .wallet-in {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .wallet-text {
+                max-width: 200px;
+                width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+
         &_item {
             font-size: 17px;
             line-height: 20px;

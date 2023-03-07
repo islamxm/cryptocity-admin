@@ -29,8 +29,11 @@ const headMock = [
     'id транзакции', 
     'Инфо',
     'MPI',
+    'Кошелек',
+    'Менеджер',
     'Ожидание',
-    'Статус' 
+    'Статус',
+    
 ];
 
 
@@ -60,6 +63,10 @@ const SecondTable = ({list, MyManagerID, load, updateList}) => {
             }).finally(_ => setPopLoad(false))
         }
     }
+
+    useEffect(() => {
+        console.log(list[0])
+    }, [list])
 
     const copyValue = (text, label) => {
         navigator.clipboard.writeText(text).then(res => {
@@ -265,6 +272,25 @@ const SecondTable = ({list, MyManagerID, load, updateList}) => {
                                     <MdOutlineContentCopy/>
                                 </button>
                             </td>
+                            <td className='TrTable__body_item wallet'>
+                                <div className="wallet-in">
+                                    {
+                                        item?.UserWallet ? (
+                                            <div className="wallet-text"></div>
+                                        ) : 'N/D'
+                                    }
+                                    {
+                                        item?.UserWallet ? (
+                                            <button onClick={() => copyValue(item?.UserWallet, 'Кошелек скопирован')} className="TrTable__body_item_copy">
+                                                <MdOutlineContentCopy/>
+                                            </button>
+                                        ) : null
+                                    }
+                                </div>
+                            </td>
+                            <td className='TrTable__body_item'>
+                                {item?.ManagerUserName ? item?.ManagerUserName : 'N/D'}
+                            </td>
 
                             {/* Ожидание */}
                             <td className="TrTable__body_item">
@@ -283,6 +309,7 @@ const SecondTable = ({list, MyManagerID, load, updateList}) => {
                                     type={switchStatus(item?.Status, item?.ManagerID, MyManagerID, item?.TransactionType)}
                                     />
                             </td>
+                            
                         </tr>
                     ))
                 }
