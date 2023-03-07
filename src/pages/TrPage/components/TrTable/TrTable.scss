@@ -124,6 +124,20 @@
                 opacity: .5;
                 filter: grayscale(1);
             }
+
+            .tr-id {
+                max-width: 200px;
+                display: flex;
+                align-items: center;
+
+                &_text {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+
+
+            }
         }
     }
 }

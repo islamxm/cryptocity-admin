@@ -29,7 +29,6 @@ const headMock = [
     'id транзакции', 
     'Инфо',
     'MPI',
-    'Кошелек',
     'Менеджер',
     'Ожидание',
     'Статус',
@@ -233,7 +232,16 @@ const SecondTable = ({list, MyManagerID, load, updateList}) => {
 
                             {/* id транзакции */}
                             <td className="TrTable__body_item">
-                                {item?.ID}
+                                {
+                                    item?.Transaction_TrxID ? (
+                                        <div className='tr-id'>
+                                            <div className='tr-id_text'>{item?.Transaction_TrxID}</div>
+                                            <button onClick={() => copyValue(item?.Transaction_TrxID, 'ID транзакции скопирован')} className="TrTable__body_item_copy">
+                                                <MdOutlineContentCopy/>
+                                            </button>
+                                        </div>
+                                    ) : 'N/D'
+                                }
                             </td>
 
                             
@@ -272,22 +280,7 @@ const SecondTable = ({list, MyManagerID, load, updateList}) => {
                                     <MdOutlineContentCopy/>
                                 </button>
                             </td>
-                            <td className='TrTable__body_item wallet'>
-                                <div className="wallet-in">
-                                    {
-                                        item?.UserWallet ? (
-                                            <div className="wallet-text"></div>
-                                        ) : 'N/D'
-                                    }
-                                    {
-                                        item?.UserWallet ? (
-                                            <button onClick={() => copyValue(item?.UserWallet, 'Кошелек скопирован')} className="TrTable__body_item_copy">
-                                                <MdOutlineContentCopy/>
-                                            </button>
-                                        ) : null
-                                    }
-                                </div>
-                            </td>
+                           
                             <td className='TrTable__body_item'>
                                 {item?.ManagerUserName ? item?.ManagerUserName : 'N/D'}
                             </td>

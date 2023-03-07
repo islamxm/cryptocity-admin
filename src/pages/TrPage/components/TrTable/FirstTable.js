@@ -283,14 +283,22 @@ const FirstTable = ({list, MyManagerID, load, updateList}) => {
 
                             {/* id транзакции */}
                             <td className="TrTable__body_item">
-                                {item?.ID}
+                                {
+                                    item?.Transaction_TrxID ? (
+                                        <div className='tr-id'>
+                                            <div className='tr-id_text'>{item?.Transaction_TrxID}</div>
+                                            <button onClick={() => copyValue(item?.Transaction_TrxID, 'ID транзакции скопирован')} className="TrTable__body_item_copy">
+                                                <MdOutlineContentCopy/>
+                                            </button>
+                                        </div>
+                                    ) : 'N/D'
+                                }
                             </td>
 
                             {/* Состояние */}
                             {/* <td className="TrTable__body_item">
                                 Состояние
                             </td> */}
-
                             {/* Менеджер */}
                             <td className="TrTable__body_item">
                                 {item?.ManagerUserName ? item?.ManagerUserName : 'N/D'}
