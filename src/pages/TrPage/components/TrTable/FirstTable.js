@@ -12,6 +12,7 @@ import {ScaleLoader} from 'react-spinners';
 import DescrWhenReject from '../../modals/DescrWhenReject/DescrWhenReject';
 import Moment from 'react-moment';
 import {BiErrorCircle} from 'react-icons/bi';
+import * as _ from 'lodash';
 
 
 const service = new apiService();
@@ -332,7 +333,7 @@ const FirstTable = ({list, MyManagerID, load, updateList}) => {
 
 
                             <td className="TrTable__body_item">
-                                {item?.OutputMPI ? item?.OutputMPI : 0} MPI
+                                {item?.OutputMPI ? _.round(item?.OutputMPI, 3) : 0} MPI
                                 <button className="TrTable__body_item_copy">
                                     <MdOutlineContentCopy/>
                                 </button>
